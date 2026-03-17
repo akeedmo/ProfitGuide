@@ -99,28 +99,28 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-slate-900 shadow-sm sticky top-0 z-40 transition-colors duration-300 border-b border-slate-800">
+      <nav className="bg-slate-950/80 backdrop-blur-md sticky top-0 z-40 transition-colors duration-300 border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between h-14">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center gap-1.5 text-white">
-                <DollarSign className="h-6 w-6 text-emerald-500" />
-                <span className="font-bold h3 whitespace-nowrap">{t.title}</span>
+              <Link to="/" className="flex items-center gap-1.5 text-slate-200">
+                <DollarSign className="h-5 w-5 text-emerald-600" />
+                <span className="font-semibold text-sm whitespace-nowrap">{t.title}</span>
               </Link>
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex md:items-center md:gap-2 lg:gap-3">
+            <div className="hidden md:flex md:items-center md:gap-1 lg:gap-2">
               {t.links.map((link) => {
                 const isActive = location.pathname === link.path;
                 return (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`px-3 py-2 rounded-lg text-sm font-bold transition-all border ${
+                    className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all border ${
                       isActive
-                        ? 'bg-slate-950 text-emerald-400 border-emerald-500/50 shadow-lg shadow-black/20'
-                        : 'text-slate-300 border-slate-800 hover:border-emerald-500/30 hover:bg-slate-950 hover:text-emerald-400'
+                        ? 'bg-slate-900 text-emerald-400 border-emerald-500/30'
+                        : 'text-slate-400 border-transparent hover:text-emerald-400'
                     }`}
                   >
                     {link.name}
@@ -288,8 +288,8 @@ export default function Navbar() {
                     : 'text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400'
                 }`}
               >
-                <Icon className="w-5 h-5 mb-1" />
-                <span className="text-[10px] font-bold truncate w-full text-center">{link.name}</span>
+                <Icon className="w-4 h-4 mb-1" />
+                <span className="text-[10px] font-thin truncate w-full text-center">{link.name}</span>
               </Link>
             );
           })}

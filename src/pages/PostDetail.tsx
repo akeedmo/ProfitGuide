@@ -110,6 +110,17 @@ export default function PostDetail() {
         style={{ scaleX }}
       />
 
+      {/* Back to Top Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 z-50 p-4 bg-emerald-500 text-white rounded-full shadow-lg shadow-emerald-500/30"
+      >
+        <ArrowRight className="w-6 h-6 rotate-[-90deg]" />
+      </motion.button>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <SEO 
           title={post.title} 
@@ -270,29 +281,6 @@ export default function PostDetail() {
                   {otherPosts.length === 0 && (
                     <p className="text-slate-500 dark:text-slate-400">{lang === 'ar' ? 'لا توجد منشورات أخرى.' : lang === 'en' ? 'No other posts.' : 'Başka gönderi yok.'}</p>
                   )}
-                </div>
-              </div>
-
-              {/* Newsletter / CTA */}
-              <div className="card p-8 bg-slate-900 dark:bg-emerald-900/20 border-none overflow-hidden relative group">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl group-hover:bg-emerald-500/30 transition-all" />
-                <div className="relative z-10">
-                  <h3 className="h3 text-white mb-3">
-                    {lang === 'ar' ? 'اشترك في نشرتنا' : 'Join Newsletter'}
-                  </h3>
-                  <p className="text-slate-300 text-sm mb-6 leading-relaxed">
-                    {lang === 'ar' ? 'احصل على أحدث طرق الربح من الإنترنت مباشرة في بريدك.' : 'Get the latest online profit methods directly to your inbox.'}
-                  </p>
-                  <div className="space-y-3">
-                    <input 
-                      type="email" 
-                      placeholder={lang === 'ar' ? 'بريدك الإلكتروني' : 'Your email'}
-                      className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
-                    />
-                    <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-black py-3 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
-                      {lang === 'ar' ? 'اشترك الآن' : 'Subscribe Now'}
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>

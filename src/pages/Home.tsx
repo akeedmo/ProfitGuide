@@ -323,26 +323,26 @@ export default function Home() {
                 <Sparkles className="w-4 h-4" />
                 <span>{lang === 'ar' ? 'دليلك الشامل لعام 2026' : lang === 'en' ? 'Your Comprehensive 2026 Guide' : 'Kapsamlı 2026 Rehberiniz'}</span>
               </div>
-              <h1 className="h1 tracking-tight mb-8 text-emerald-500 leading-tight whitespace-pre-line">
-                {t.heroTitle}
+              <h1 className="text-[24px] md:text-[28px] font-black tracking-tight mb-10 text-emerald-500 leading-tight whitespace-normal">
+                {t.heroTitle.replace('\n', ' ')}
               </h1>
-              <FormattedText text={t.heroDesc} className="mb-12 max-w-2xl text-lg md:text-xl text-white font-bold" />
+              <FormattedText text={t.heroDesc} className="mb-12 max-w-2xl text-[14px] md:text-[16px] text-white/80 font-medium leading-[1.6]" />
               
               {/* Quick Links Index */}
               <div className="mb-12 p-6 rounded-3xl bg-slate-900/50 border border-slate-800 backdrop-blur-sm max-w-2xl">
-                <div className="flex items-center gap-3 mb-4 text-emerald-400 font-black">
+                <div className="flex items-center gap-3 mb-6 text-emerald-400 font-semibold text-[18px]">
                   <List className="w-5 h-5" />
                   <span>{t.quickLinks}</span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
                   {Object.entries(t.sections).map(([id, label]) => (
                     <a 
                       key={id} 
                       href={`#${id}`}
-                      className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors text-sm font-bold group"
+                      className="flex items-center gap-2 text-slate-300 hover:text-emerald-400 transition-colors text-[14px] font-medium group"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-emerald-500 transition-colors" />
-                      {label as string}
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-600 group-hover:bg-emerald-500 transition-colors" />
+                      <span className="text-[14px]">{label as string}</span>
                     </a>
                   ))}
                 </div>
