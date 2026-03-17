@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://profit-guide.vercel.app/sitemap.xml

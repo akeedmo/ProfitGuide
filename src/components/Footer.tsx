@@ -135,6 +135,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {t.copyright}
           </p>
           <div className="flex items-center gap-6 text-sm text-slate-500">
+            <a href="/sitemap.xml" className="hover:text-emerald-400 transition-colors">Sitemap</a>
             <a href="#" className="hover:text-emerald-400 transition-colors">سياسة الخصوصية</a>
             <a href="#" className="hover:text-emerald-400 transition-colors">شروط الاستخدام</a>
           </div>

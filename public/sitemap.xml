@@ -1,72 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/</loc>
+    <loc>https://profit-guide.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/articles</loc>
+    <loc>https://profit-guide.vercel.app/articles</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/freelancing</loc>
+    <loc>https://profit-guide.vercel.app/freelancing</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/affiliate-marketing</loc>
+    <loc>https://profit-guide.vercel.app/affiliate-marketing</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/content-creation</loc>
+    <loc>https://profit-guide.vercel.app/content-creation</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/ecommerce</loc>
+    <loc>https://profit-guide.vercel.app/ecommerce</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/digital-investments</loc>
+    <loc>https://profit-guide.vercel.app/digital-investments</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/tools-resources</loc>
+    <loc>https://profit-guide.vercel.app/tools-resources</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/tips-guides</loc>
+    <loc>https://profit-guide.vercel.app/tips-guides</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/faq</loc>
+    <loc>https://profit-guide.vercel.app/faq</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/about</loc>
+    <loc>https://profit-guide.vercel.app/about</loc>
     <priority>0.5</priority>
   </url>
   <!-- Articles -->
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/post/1</loc>
+    <loc>https://profit-guide.vercel.app/post/1</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/post/2</loc>
+    <loc>https://profit-guide.vercel.app/post/2</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/post/3</loc>
+    <loc>https://profit-guide.vercel.app/post/3</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/post/4</loc>
+    <loc>https://profit-guide.vercel.app/post/4</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/post/5</loc>
+    <loc>https://profit-guide.vercel.app/post/5</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-dev-nfhlzmlovvbwcgc6duvnab-57287700371.europe-west2.run.app/post/6</loc>
+    <loc>https://profit-guide.vercel.app/post/6</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
+
