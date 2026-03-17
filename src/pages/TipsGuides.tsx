@@ -110,14 +110,14 @@ export default function TipsGuides() {
             <Share2 className="w-5 h-5" />
           </button>
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
         {/* Section 1 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Target className="text-emerald-500" />
             {t.section1Title}
           </h2>
@@ -127,7 +127,7 @@ export default function TipsGuides() {
                 <div className="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <span className="text-emerald-600 dark:text-emerald-400 font-bold text-xl">{index + 1}</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3">{tip.title}</h3>
+                <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-3">{tip.title}</h3>
                 <FormattedText text={tip.desc} className="text-gray-600 dark:text-slate-300" />
               </div>
             ))}
@@ -136,7 +136,7 @@ export default function TipsGuides() {
 
         {/* Section 2 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <AlertCircle className="text-red-500" />
             {t.section2Title}
           </h2>
@@ -144,7 +144,7 @@ export default function TipsGuides() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {t.section2Mistakes.map((mistake, index) => (
                 <div key={index} className="card p-5 border-red-50 dark:border-red-900/50">
-                  <h3 className="font-bold text-red-800 dark:text-red-400 mb-2">{mistake.title}</h3>
+                  <h3 className="h3 text-red-800 dark:text-red-400 mb-2">{mistake.title}</h3>
                   <FormattedText text={mistake.desc} className="text-gray-700 dark:text-slate-300 text-sm" />
                 </div>
               ))}
@@ -154,7 +154,7 @@ export default function TipsGuides() {
 
         {/* Section 3 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Lightbulb className="text-amber-500" />
             {t.section3Title}
           </h2>
@@ -163,7 +163,7 @@ export default function TipsGuides() {
               <div key={index} className="card p-6 flex gap-4 items-start">
                 <CheckCircle2 className="text-emerald-500 shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-2">{story.title}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-2">{story.title}</h3>
                   <FormattedText text={story.desc} className="text-gray-600 dark:text-slate-300" />
                 </div>
               </div>

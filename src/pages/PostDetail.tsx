@@ -137,17 +137,17 @@ export default function PostDetail() {
             >
               <header className="mb-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="bg-emerald-500 text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
+                  <span className="badge bg-emerald-500 text-white px-4 py-1.5 rounded-full">
                     {post.category}
                   </span>
                   <div className="h-px flex-grow bg-slate-200 dark:bg-slate-800" />
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight">
+                <h1 className="h1 mb-8 leading-[1.1]">
                   {post.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-400 border-y border-slate-100 dark:border-slate-800 py-6">
+                <div className="metadata flex flex-wrap items-center gap-6 border-y border-slate-100 dark:border-slate-800 py-6">
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
                       {lang === 'ar' ? 'د' : 'P'}
@@ -189,7 +189,7 @@ export default function PostDetail() {
               <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                   <div className="flex items-center gap-4">
-                    <h3 className="font-bold text-slate-900 dark:text-white">
+                    <h3 className="h3 font-bold text-slate-900 dark:text-white">
                       {lang === 'ar' ? 'شارك المقال:' : lang === 'en' ? 'Share this:' : 'Paylaş:'}
                     </h3>
                     <div className="flex gap-2">
@@ -243,7 +243,7 @@ export default function PostDetail() {
             <div className="sticky top-24 space-y-8">
               {/* Other Posts */}
               <div className="card p-8 bg-white dark:bg-slate-800/50 backdrop-blur-sm">
-                <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                <h2 className="h2 text-slate-900 dark:text-white mb-8 flex items-center gap-3">
                   <div className="w-2 h-8 bg-emerald-500 rounded-full" />
                   {lang === 'ar' ? 'مقالات قد تهمك' : lang === 'en' ? 'Related Articles' : 'İlginizi Çekebilir'}
                 </h2>
@@ -257,10 +257,10 @@ export default function PostDetail() {
                           </div>
                         )}
                         <div className="flex flex-col justify-center">
-                          <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500 mb-1">
+                          <span className="badge text-emerald-500 mb-1">
                             {p.category}
                           </span>
-                          <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                  <h3 className="h3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
                             {p.title}
                           </h3>
                         </div>
@@ -277,7 +277,7 @@ export default function PostDetail() {
               <div className="card p-8 bg-slate-900 dark:bg-emerald-900/20 border-none overflow-hidden relative group">
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl group-hover:bg-emerald-500/30 transition-all" />
                 <div className="relative z-10">
-                  <h3 className="text-xl font-black text-white mb-3">
+                  <h3 className="h3 text-white mb-3">
                     {lang === 'ar' ? 'اشترك في نشرتنا' : 'Join Newsletter'}
                   </h3>
                   <p className="text-slate-300 text-sm mb-6 leading-relaxed">

@@ -112,14 +112,14 @@ export default function Freelancing() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
         {/* Section 1 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <MonitorPlay className="text-emerald-500" />
             {t.section1Title}
           </h2>
@@ -138,7 +138,7 @@ export default function Freelancing() {
 
         {/* Section 2 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Star className="text-amber-500" />
             {t.section2Title}
           </h2>
@@ -149,7 +149,7 @@ export default function Freelancing() {
                 className="card flex flex-col justify-between hover:border-emerald-200 dark:hover:border-emerald-500/50 hover:shadow-md transition-all group p-6"
               >
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{platform.name}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{platform.name}</h3>
                   <FormattedText text={platform.desc} className="text-gray-600 dark:text-slate-300 mb-6" />
                 </div>
                 <a 
@@ -167,21 +167,21 @@ export default function Freelancing() {
 
         {/* Section 3 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <TrendingUp className="text-emerald-500" />
             {t.section3Title}
           </h2>
           <div className="card p-8">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-4">{t.section3Sub}</h3>
+            <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-4">{t.section3Sub}</h3>
             <div className="space-y-6">
               {t.tips.map((tip, index) => (
                 <div key={index}>
-                  <h4 className="font-bold text-slate-800 dark:text-emerald-300 mb-2">{tip.title}</h4>
+                  <h4 className="h3 text-slate-800 dark:text-emerald-300 mb-2">{tip.title}</h4>
                   <FormattedText text={tip.desc} className="text-gray-700 dark:text-slate-300" />
                 </div>
               ))}
               <div className="card p-6 mt-6 border-l-4 border-emerald-500 dark:border-slate-700" style={{ borderLeftColor: dir === 'rtl' ? 'transparent' : '#10B981', borderRightColor: dir === 'rtl' ? '#10B981' : 'transparent', borderRightWidth: dir === 'rtl' ? '4px' : '0' }}>
-                <h4 className="font-bold text-slate-900 dark:text-emerald-400 mb-3">{t.exampleTitle}</h4>
+                <h4 className="h3 text-slate-900 dark:text-emerald-400 mb-3">{t.exampleTitle}</h4>
                 <p className="text-gray-600 dark:text-slate-300 mb-4 italic">"{t.exampleText}"</p>
                 <FormattedText text={t.exampleNote} className="text-sm text-gray-500 dark:text-slate-400" />
               </div>

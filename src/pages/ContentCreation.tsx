@@ -119,14 +119,14 @@ export default function ContentCreation() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
         {/* Section 1 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Youtube className="text-amber-500" />
             {t.section1Title}
           </h2>
@@ -134,7 +134,7 @@ export default function ContentCreation() {
             <FormattedText text={t.section1P1} className="text-lg text-gray-600 dark:text-slate-300 mb-6" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 dark:bg-slate-900/50 rounded-xl p-6 border border-gray-100 dark:border-slate-700">
-                <h3 className="font-bold text-slate-900 dark:text-emerald-400 mb-3 flex items-center gap-2">
+                <h3 className="h3 font-bold text-slate-900 dark:text-emerald-400 mb-3 flex items-center gap-2">
                   <PlayCircle className="h-5 w-5 text-emerald-500" /> {t.stepsTitle}
                 </h3>
                 <ul className="space-y-2 text-gray-700 dark:text-slate-300 text-sm">
@@ -144,7 +144,7 @@ export default function ContentCreation() {
                 </ul>
               </div>
               <div className="bg-gray-50 dark:bg-slate-900/50 rounded-xl p-6 border border-gray-100 dark:border-slate-700">
-                <h3 className="font-bold text-slate-900 dark:text-emerald-400 mb-3 flex items-center gap-2">
+                <h3 className="h3 font-bold text-slate-900 dark:text-emerald-400 mb-3 flex items-center gap-2">
                   <span className="text-xl">💰</span> {t.incomeTitle}
                 </h3>
                 <ul className="space-y-2 text-gray-700 dark:text-slate-300 text-sm">
@@ -159,7 +159,7 @@ export default function ContentCreation() {
 
         {/* Section 2 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Instagram className="text-amber-500" />
             {t.section2Title}
           </h2>
@@ -167,11 +167,11 @@ export default function ContentCreation() {
             <FormattedText text={t.section2P1} className="text-gray-700 dark:text-slate-300" />
             <div className="space-y-4 mt-6">
               <div className="border-emerald-500 px-4" style={{ borderRightWidth: dir === 'rtl' ? '4px' : '0', borderLeftWidth: dir === 'ltr' ? '4px' : '0' }}>
-                <h4 className="font-bold text-slate-900 dark:text-emerald-400">{t.sponsorshipsTitle}</h4>
+                <h3 className="h3 font-bold text-slate-900 dark:text-emerald-400">{t.sponsorshipsTitle}</h3>
                 <FormattedText text={t.sponsorshipsDesc} className="text-gray-600 dark:text-slate-300 text-base" />
               </div>
               <div className="border-emerald-500 px-4" style={{ borderRightWidth: dir === 'rtl' ? '4px' : '0', borderLeftWidth: dir === 'ltr' ? '4px' : '0' }}>
-                <h4 className="font-bold text-slate-900 dark:text-emerald-400">{t.giftsTitle}</h4>
+                <h3 className="h3 font-bold text-slate-900 dark:text-emerald-400">{t.giftsTitle}</h3>
                 <FormattedText text={t.giftsDesc} className="text-gray-600 dark:text-slate-300 text-base" />
               </div>
             </div>
@@ -180,19 +180,19 @@ export default function ContentCreation() {
 
         {/* Section 3 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Mic className="text-amber-500" />
             {t.section3Title}
           </h2>
           <div className="bg-gray-50 dark:bg-slate-900/50 border border-gray-100 dark:border-slate-700 rounded-2xl p-8">
             <FormattedText text={t.section3P1} className="text-gray-700 dark:text-slate-300 text-lg mb-6" />
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-4 flex items-center gap-2">
+            <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-4 flex items-center gap-2">
               <Users className="h-6 w-6 text-emerald-500" /> {t.tipsTitle}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {t.tips.map((tip, index) => (
                 <div key={index} className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700">
-                  <h4 className="font-bold text-slate-900 dark:text-emerald-400 mb-2">{tip.title}</h4>
+                  <h3 className="h3 font-bold text-slate-900 dark:text-emerald-400 mb-2">{tip.title}</h3>
                   <FormattedText text={tip.desc} className="text-sm text-gray-600 dark:text-slate-300" />
                 </div>
               ))}

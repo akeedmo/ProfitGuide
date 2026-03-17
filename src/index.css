@@ -1,21 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @layer base {
   html {
-    font-family: var(--font-family, "Cairo", sans-serif);
+    font-family: "Cairo", sans-serif;
   }
   
   body {
-    @apply text-slate-700 bg-slate-100 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300 leading-relaxed text-[16px] md:text-[18px];
+    @apply text-slate-700 bg-slate-100 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300 leading-relaxed text-[14px] md:text-[16px];
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-slate-900 dark:text-white font-bold tracking-tight leading-snug;
   }
 
+  h1 { @apply text-[18px] md:text-[22px]; }
+  h2 { @apply text-[18px] md:text-[22px]; }
+  h3 { @apply text-[18px] md:text-[22px]; }
+
   p {
-    @apply text-slate-600 dark:text-slate-400 leading-loose;
+    @apply text-slate-600 dark:text-slate-400 leading-loose text-[14px] md:text-[16px] font-normal;
+  }
+
+  .badge {
+    @apply text-[12px] font-medium;
+  }
+
+  .metadata {
+    @apply text-[12px] text-slate-500 dark:text-slate-400;
+  }
+
+  .btn-read-more {
+    @apply text-[14px] font-medium bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors;
   }
 
   .card {

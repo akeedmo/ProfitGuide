@@ -269,9 +269,9 @@ const translations = {
 };
 
 const articleImages = [
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=60',
+  'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=60',
 ];
 
 export default function Home() {
@@ -291,7 +291,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center pt-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 opacity-95"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80')] opacity-20 bg-cover bg-center mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=60')] opacity-20 bg-cover bg-center mix-blend-overlay"></div>
           
           {/* Animated Glows */}
           <motion.div 
@@ -323,7 +323,7 @@ export default function Home() {
                 <Sparkles className="w-4 h-4" />
                 <span>{lang === 'ar' ? 'دليلك الشامل لعام 2026' : lang === 'en' ? 'Your Comprehensive 2026 Guide' : 'Kapsamlı 2026 Rehberiniz'}</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-8 text-emerald-500 leading-tight whitespace-pre-line">
+              <h1 className="h1 tracking-tight mb-8 text-emerald-500 leading-tight whitespace-pre-line">
                 {t.heroTitle}
               </h1>
               <FormattedText text={t.heroDesc} className="mb-12 max-w-2xl text-lg md:text-xl text-white font-bold" />
@@ -374,7 +374,7 @@ export default function Home() {
             >
               <div className="relative z-10 bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-[2.5rem] shadow-2xl border border-slate-700/50">
                 <img 
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1000&q=80" 
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=60" 
                   className="rounded-[2rem] shadow-inner" 
                   alt="Dashboard" 
                 />
@@ -400,34 +400,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section id="stats" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {t.stats.map((stat, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-6"
-            >
-              <div className="w-16 h-16 bg-slate-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
-                <stat.icon className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <div>
-                <p className="text-4xl font-black text-slate-900 dark:text-white mb-1">{stat.value}</p>
-                <p className="text-slate-500 dark:text-slate-400 font-bold">{stat.label}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* Bento Grid Methods Section */}
       <section id="methods" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6"
+            className="h2 text-slate-900 dark:text-white mb-6"
           >
             {t.methodsTitle}
           </motion.h2>
@@ -441,13 +420,13 @@ export default function Home() {
             className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-[2.5rem] shadow-2xl"
           >
             <Link to={t.methods[0].path} className="absolute inset-0 z-20"></Link>
-            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Freelancing" />
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=60" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Freelancing" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 right-0 p-10 z-20">
               <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl">
                 <Briefcase className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-4xl font-black text-white mb-4">{t.methods[0].title}</h3>
+              <h3 className="h3 text-white mb-4">{t.methods[0].title}</h3>
               <p className="text-slate-200 text-lg max-w-xl leading-relaxed">{t.methods[0].description}</p>
             </div>
           </motion.div>
@@ -460,7 +439,7 @@ export default function Home() {
             <Link to={t.methods[1].path} className="absolute inset-0 z-20"></Link>
             <div className="relative z-10">
               <Share2 className="w-12 h-12 text-white mb-6" />
-              <h3 className="text-2xl font-black text-white mb-4">{t.methods[1].title}</h3>
+              <h3 className="h3 text-white mb-4">{t.methods[1].title}</h3>
               <div className="flex items-center text-white/80 font-bold group-hover:gap-2 transition-all">
                 <span>{t.discoverMore}</span>
                 <ArrowIcon className="w-5 h-5" />
@@ -477,7 +456,7 @@ export default function Home() {
             <Link to={t.methods[2].path} className="absolute inset-0 z-20"></Link>
             <div className="relative z-10">
               <Video className="w-12 h-12 text-amber-500 mb-6" />
-              <h3 className="text-2xl font-black text-white mb-4">{t.methods[2].title}</h3>
+              <h3 className="h3 text-white mb-4">{t.methods[2].title}</h3>
               <div className="flex items-center text-white/60 font-bold group-hover:gap-2 transition-all">
                 <span>{t.discoverMore}</span>
                 <ArrowIcon className="w-5 h-5" />
@@ -498,7 +477,7 @@ export default function Home() {
                   <method.icon className="w-8 h-8" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">{method.title}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-white mb-2">{method.title}</h3>
                   <p className="text-slate-500 dark:text-slate-400 line-clamp-2">{method.description}</p>
                 </div>
               </div>
@@ -520,7 +499,7 @@ export default function Home() {
               <ProfitCalculator />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+              <h2 className="h2 text-white mb-8 leading-tight">
                 {lang === 'ar' ? 'خطط لمستقبلك المالي بدقة' : 'Plan Your Financial Future Precisely'}
               </h2>
               <p className="text-xl text-slate-400 mb-12 leading-relaxed">
@@ -548,7 +527,7 @@ export default function Home() {
       {/* Quiz Section */}
       <section id="quiz" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4">
+          <h2 className="h2 text-slate-900 dark:text-white mb-4">
             {lang === 'ar' ? 'حائر من أين تبدأ؟' : 'Confused where to start?'}
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400">
@@ -563,7 +542,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
               <div className="max-w-2xl">
-                <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">{t.articlesTitle}</h2>
+                <h2 className="h2 text-slate-900 dark:text-white mb-6">{t.articlesTitle}</h2>
                 <FormattedText text={t.articlesDesc} className="text-xl text-slate-600 dark:text-slate-300" />
               </div>
             <Link to="/articles" className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-2xl font-black hover:scale-105 transition-all flex items-center gap-3">
@@ -588,7 +567,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                   <div className="absolute top-6 left-6 flex gap-2">
-                    <span className="bg-emerald-500 text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest">
+                    <span className="badge bg-emerald-500 text-white px-4 py-2 rounded-full uppercase tracking-widest">
                       {article.category}
                     </span>
                     <button 
@@ -611,15 +590,15 @@ export default function Home() {
                   </div>
                 </Link>
                 <div className="px-2">
-                  <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 mb-4 font-black uppercase tracking-widest">
+                  <div className="metadata flex items-center gap-4 mb-4 uppercase tracking-widest">
                     <span>{article.date ? new Date(article.date).toLocaleDateString(lang === 'ar' ? 'ar-EG' : lang === 'en' ? 'en-US' : 'tr-TR') : '2026/03/16'}</span>
                     <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
                     <span>5 min read</span>
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 line-clamp-2 group-hover:text-emerald-600 transition-colors leading-tight">
+                  <h3 className="h3 mb-4 line-clamp-2 group-hover:text-emerald-600 transition-colors leading-tight">
                     {article.title}
                   </h3>
-                  <Link to={`/post/${article.id || index}`} className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-black group-hover:gap-4 transition-all">
+                  <Link to={`/post/${article.id || index}`} className="btn-read-more inline-flex items-center gap-2 group-hover:gap-4 transition-all">
                     {t.readMore}
                     <ArrowIcon className="w-5 h-5" />
                   </Link>

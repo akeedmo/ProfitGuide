@@ -98,7 +98,7 @@ export default function DigitalInvestments() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
@@ -106,7 +106,7 @@ export default function DigitalInvestments() {
       <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-r-xl mb-12 flex items-start gap-4" style={{ borderLeftWidth: dir === 'ltr' ? '4px' : '0', borderRightWidth: dir === 'rtl' ? '4px' : '0', borderLeftColor: '#ef4444', borderRightColor: '#ef4444' }}>
         <AlertTriangle className="text-red-500 h-8 w-8 shrink-0" />
         <div>
-          <h3 className="text-red-800 dark:text-red-400 font-bold text-lg mb-2">{t.warningTitle}</h3>
+          <h3 className="h3 text-red-800 dark:text-red-400 mb-2">{t.warningTitle}</h3>
           <FormattedText text={t.warningDesc} className="text-red-700 dark:text-red-300" />
         </div>
       </div>
@@ -114,7 +114,7 @@ export default function DigitalInvestments() {
       <div className="space-y-16">
         {/* Section 1 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Bitcoin className="text-amber-500" />
             {t.section1Title}
           </h2>
@@ -123,7 +123,7 @@ export default function DigitalInvestments() {
             <div className="space-y-4">
               {t.cryptoTypes.map((crypto, index) => (
                 <div key={index} className="bg-gray-50 dark:bg-slate-900/50 p-4 rounded-xl border border-gray-100 dark:border-slate-700">
-                  <h3 className="font-bold text-slate-900 dark:text-emerald-400 mb-1">{crypto.name}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-1">{crypto.name}</h3>
                   <FormattedText text={crypto.desc} className="text-gray-600 dark:text-slate-300 text-sm" />
                 </div>
               ))}
@@ -133,7 +133,7 @@ export default function DigitalInvestments() {
 
         {/* Section 2 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <LineChart className="text-emerald-500" />
             {t.section2Title}
           </h2>
@@ -142,7 +142,7 @@ export default function DigitalInvestments() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {t.stockTypes.map((stock, index) => (
                 <div key={index} className="border border-gray-200 dark:border-slate-700 rounded-xl p-6 hover:border-emerald-300 dark:hover:border-emerald-500/50 transition-colors">
-                  <h3 className="font-bold text-slate-900 dark:text-emerald-400 text-xl mb-3">{stock.title}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-3">{stock.title}</h3>
                   <FormattedText text={stock.desc} className="text-gray-600 dark:text-slate-300" />
                 </div>
               ))}
@@ -152,7 +152,7 @@ export default function DigitalInvestments() {
 
         {/* Section 3 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <ShieldAlert className="text-emerald-500" />
             {t.section3Title}
           </h2>
@@ -166,14 +166,14 @@ export default function DigitalInvestments() {
 
         {/* Platforms */}
         <section className="bg-slate-900 dark:bg-slate-800 text-white rounded-2xl p-8 border border-transparent dark:border-slate-700">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+          <h2 className="h2 mb-6 flex items-center gap-3">
             <TrendingUp className="text-emerald-400" />
             {t.platformsTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.platforms.map((platform, index) => (
               <div key={index} className="bg-slate-800/50 dark:bg-slate-700/50 p-6 rounded-xl border border-emerald-700 dark:border-slate-600">
-                <h3 className="font-bold text-xl mb-2">{platform.name}</h3>
+                <h3 className="h3 mb-2">{platform.name}</h3>
                 <FormattedText text={platform.desc} className="text-slate-200 dark:text-slate-300 text-sm" />
               </div>
             ))}

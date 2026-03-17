@@ -63,7 +63,7 @@ export default function About() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
@@ -73,7 +73,7 @@ export default function About() {
             <div className="w-12 h-12 bg-slate-100 dark:bg-slate-900/50 rounded-xl flex items-center justify-center mb-6">
               <Target className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.missionTitle}</h2>
+            <h2 className="h2 text-slate-900 dark:text-white mb-4">{t.missionTitle}</h2>
             <FormattedText text={t.missionDesc} className="text-slate-600 dark:text-slate-300" />
           </div>
           
@@ -81,14 +81,14 @@ export default function About() {
             <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/50 rounded-xl flex items-center justify-center mb-6">
               <Info className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.visionTitle}</h2>
+            <h2 className="h2 text-slate-900 dark:text-white mb-4">{t.visionTitle}</h2>
             <FormattedText text={t.visionDesc} className="text-slate-600 dark:text-slate-300" />
           </div>
         </div>
 
         <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 md:p-12 border border-slate-100 dark:border-slate-800">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">{t.valuesTitle}</h2>
+            <h2 className="h2 text-slate-900 dark:text-white mb-4">{t.valuesTitle}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.values.map((value, index) => (
@@ -96,7 +96,7 @@ export default function About() {
                 <div className="w-16 h-16 mx-auto bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-sm mb-4 border border-slate-100 dark:border-slate-700">
                   {index === 0 ? <Shield className="w-8 h-8 text-emerald-500" /> : index === 1 ? <Target className="w-8 h-8 text-emerald-500" /> : <Users className="w-8 h-8 text-amber-500" />}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{value.title}</h3>
+                <h3 className="h3 text-slate-900 dark:text-white mb-2">{value.title}</h3>
                 <FormattedText text={value.desc} className="text-slate-600 dark:text-slate-400" />
               </div>
             ))}
@@ -104,7 +104,7 @@ export default function About() {
         </div>
 
         <div className="text-center bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-xl">
-          <h2 className="text-3xl font-bold mb-4">{t.contactTitle}</h2>
+          <h2 className="h2 mb-4">{t.contactTitle}</h2>
           <FormattedText text={t.contactDesc} className="text-slate-100 dark:text-slate-300 mb-6 max-w-2xl mx-auto" />
           <a href="mailto:qydalrfyd@gmail.com" className="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg shadow-emerald-500/30">
             qydalrfyd@gmail.com

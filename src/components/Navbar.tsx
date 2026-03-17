@@ -105,7 +105,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <Link to="/" className="flex items-center gap-1.5 text-white">
                 <DollarSign className="h-6 w-6 text-emerald-500" />
-                <span className="font-bold text-lg md:text-xl whitespace-nowrap">{t.title}</span>
+                <span className="font-bold h3 whitespace-nowrap">{t.title}</span>
               </Link>
             </div>
             
@@ -223,7 +223,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-1.5 text-slate-900 dark:text-emerald-400">
             <DollarSign className="h-6 w-6 text-emerald-500" />
-            <span className="font-bold text-lg">{t.title}</span>
+            <span className="font-bold h3">{t.title}</span>
           </div>
           <button 
             onClick={() => setIsOpen(false)}

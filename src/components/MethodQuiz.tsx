@@ -190,7 +190,7 @@ export default function MethodQuiz() {
             <div className="w-20 h-20 bg-amber-100 dark:bg-amber-900/50 rounded-full flex items-center justify-center mx-auto mb-6">
               <HelpCircle className="w-10 h-10 text-amber-600 dark:text-amber-400" />
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.title}</h3>
+            <h3 className="h3 mb-4">{t.title}</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-8">{t.desc}</p>
             <button 
               onClick={() => setStep(0)}
@@ -210,14 +210,14 @@ export default function MethodQuiz() {
             className="space-y-6"
           >
             <div className="flex justify-between items-center mb-4">
-              <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Question {step + 1} / 4</span>
+              <span className="badge text-emerald-600 dark:text-emerald-400">Question {step + 1} / 4</span>
               <div className="flex gap-1">
                 {[0, 1, 2, 3].map(i => (
                   <div key={i} className={`h-1.5 w-8 rounded-full ${i <= step ? 'bg-emerald-500' : 'bg-slate-100 dark:bg-slate-700'}`}></div>
                 ))}
               </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8">{t.questions[step].q}</h3>
+            <h3 className="h3 mb-8">{t.questions[step].q}</h3>
             <div className="space-y-3">
               {t.questions[step].options.map((opt, i) => (
                 <button
@@ -253,7 +253,7 @@ export default function MethodQuiz() {
               <CheckCircle2 className="w-10 h-10 text-emerald-600 dark:text-emerald-400" />
             </div>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">{t.resultTitle}</p>
-            <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-4">{getResult().title}</h3>
+            <h3 className="h2 mb-4">{getResult().title}</h3>
             <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-sm mx-auto">{getResult().desc}</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -101,14 +101,14 @@ export default function ToolsResources() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-16 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
         {/* Design Tools */}
         <section>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-8 flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-8 flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
             <PenTool className="text-emerald-500 w-8 h-8" />
             {t.designTitle}
           </h2>
@@ -122,7 +122,7 @@ export default function ToolsResources() {
                 className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-500/50 transition-all flex flex-col h-full"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{tool.name}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{tool.name}</h3>
                   <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded-full group-hover:bg-emerald-50 dark:group-hover:bg-emerald-900/30 transition-colors">
                     <ExternalLink className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400" />
                   </div>
@@ -140,7 +140,7 @@ export default function ToolsResources() {
 
         {/* Learning Platforms */}
         <section>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-8 flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-8 flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
             <BookOpen className="text-emerald-500 w-8 h-8" />
             {t.learningTitle}
           </h2>
@@ -154,7 +154,7 @@ export default function ToolsResources() {
                 className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-500/50 transition-all flex flex-col h-full"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{tool.name}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{tool.name}</h3>
                   <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded-full group-hover:bg-emerald-50 dark:group-hover:bg-emerald-900/30 transition-colors">
                     <ExternalLink className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400" />
                   </div>
@@ -172,7 +172,7 @@ export default function ToolsResources() {
 
         {/* Management Tools */}
         <section>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-8 flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-8 flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
             <Layout className="text-emerald-500 w-8 h-8" />
             {t.managementTitle}
           </h2>
@@ -186,7 +186,7 @@ export default function ToolsResources() {
                 className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-500/50 transition-all flex flex-col h-full"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{tool.name}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{tool.name}</h3>
                   <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded-full group-hover:bg-emerald-50 dark:group-hover:bg-emerald-900/30 transition-colors">
                     <ExternalLink className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400" />
                   </div>

@@ -53,7 +53,7 @@ export default function Articles() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
@@ -61,17 +61,17 @@ export default function Articles() {
         {articles.map((article: any) => (
           <div key={article.id} className="card p-6 flex flex-col">
             <div className="flex items-center gap-3 mb-4">
-              <span className="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold px-3 py-1 rounded-full">
+              <span className="badge bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 px-3 py-1 rounded-full">
                 {article.category}
               </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+              <span className="metadata flex items-center gap-1">
                 <Calendar className="w-3 h-3" />
                 {new Date(article.date).toLocaleDateString()}
               </span>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3 flex-grow">{article.title}</h3>
+            <h3 className="h3 mb-3 flex-grow">{article.title}</h3>
             <div className="flex justify-between items-center mt-4">
-              <Link to={`/post/${article.id}`} className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+              <Link to={`/post/${article.id}`} className="btn-read-more">
                 {t.readMore}
               </Link>
               <button 

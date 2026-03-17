@@ -84,7 +84,7 @@ export default function Footer() {
               <div className="bg-gradient-to-br from-emerald-400 to-emerald-600 p-1.5 rounded-lg shadow-lg shadow-emerald-500/20">
                 <DollarSign className="h-5 w-5 text-white" />
               </div>
-              <span className="font-extrabold text-xl tracking-tight">{t.title}</span>
+              <span className="font-extrabold tracking-tight h2">{t.title}</span>
             </div>
             <p className="text-slate-400 leading-relaxed mb-8 max-w-md">
               {t.desc}
@@ -107,7 +107,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-12 lg:col-span-6">
-            <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-3">
+            <h3 className="h3 text-white mb-6 flex items-center gap-3">
               <span className="w-2 h-6 bg-emerald-500 rounded-full shadow-lg shadow-emerald-500/50"></span>
               {t.quickLinks}
             </h3>

@@ -85,7 +85,7 @@ export default function ProfitCalculator() {
           <Calculator className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.title}</h3>
+          <h3 className="h3">{t.title}</h3>
           <p className="text-slate-500 dark:text-slate-400 text-sm">{t.desc}</p>
         </div>
       </div>

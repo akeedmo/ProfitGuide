@@ -122,14 +122,14 @@ export default function AffiliateMarketing() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
+        <h1 className="h1 text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
         {/* Section 1 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Link2 className="text-emerald-500" />
             {t.section1Title}
           </h2>
@@ -148,7 +148,7 @@ export default function AffiliateMarketing() {
 
         {/* Section 2 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <Target className="text-emerald-500" />
             {t.section2Title}
           </h2>
@@ -159,7 +159,7 @@ export default function AffiliateMarketing() {
                 className="card flex flex-col justify-between hover:border-emerald-200 dark:hover:border-emerald-500/50 hover:shadow-md transition-all group p-6"
               >
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{platform.name}</h3>
+                  <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{platform.name}</h3>
                   <FormattedText text={platform.desc} className="text-gray-600 dark:text-slate-300 mb-6" />
                 </div>
                 <a 
@@ -177,21 +177,21 @@ export default function AffiliateMarketing() {
 
         {/* Section 3 */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+          <h2 className="h2 text-slate-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
             <TrendingUp className="text-emerald-500" />
             {t.section3Title}
           </h2>
           <div className="bg-gray-50 dark:bg-slate-900/50 border border-gray-100 dark:border-slate-700 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-4">{t.section3Sub}</h3>
+            <h3 className="h3 text-slate-900 dark:text-emerald-400 mb-4">{t.section3Sub}</h3>
             <div className="space-y-6">
               {t.tips.map((tip, index) => (
                 <div key={index}>
-                  <h4 className="font-bold text-slate-800 dark:text-emerald-300 mb-2">{tip.title}</h4>
+                  <h3 className="h3 font-bold text-slate-800 dark:text-emerald-300 mb-2">{tip.title}</h3>
                   <FormattedText text={tip.desc} className="text-gray-700 dark:text-slate-300" />
                 </div>
               ))}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm mt-6 border border-gray-100 dark:border-slate-700">
-                <h4 className="font-bold text-slate-900 dark:text-emerald-400 mb-3">{t.exampleTitle}</h4>
+                <h3 className="h3 font-bold text-slate-900 dark:text-emerald-400 mb-3">{t.exampleTitle}</h3>
                 <ul className="space-y-3 text-gray-600 dark:text-slate-300">
                   {t.exampleSteps.map((step, index) => (
                     <li key={index} className="flex items-start gap-2">
