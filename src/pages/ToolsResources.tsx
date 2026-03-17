@@ -1,5 +1,6 @@
 import { PenTool, Laptop, BookOpen, Briefcase, Layout, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 const translations = {
   ar: {
@@ -97,6 +98,7 @@ export default function ToolsResources() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <SEO title={t.title} description={t.desc} />
       <div className="mb-16 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
         <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">

@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Calendar, Clock, ArrowRight, ArrowLeft } from 'lucide-react';
 import { articlesData } from '../data/articlesData';
+import SEO from '../components/SEO';
 
 export default function PostDetail() {
   const { id } = useParams<{ id: string }>();
@@ -34,6 +35,11 @@ export default function PostDetail() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <SEO 
+        title={post.title} 
+        description={post.content.substring(0, 160)} 
+        keywords={`${post.category}, ${post.title}`}
+      />
       <div className="mb-8">
         <Link 
           to="/articles" 

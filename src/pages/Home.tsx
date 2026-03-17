@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Briefcase, Share2, Video, ShoppingCart, TrendingUp, ArrowLeft, ArrowRight, Mail, Send, Calendar, Clock, Globe, Zap, Shield } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 const translations = {
   ar: {
@@ -219,6 +220,7 @@ export default function Home() {
 
   return (
     <div className="space-y-20 pb-20">
+      <SEO />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
