@@ -1,12 +1,33 @@
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock, Share2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { articlesData } from '../data/articlesData';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 export default function Articles() {
   const { lang } = useLanguage();
-  
+
+  const handleShare = async (article: any) => {
+    const shareUrl = `${window.location.origin}/post/${article.id}`;
+    const text = `${article.title}\n${lang === 'ar' ? 'اقرأ المزيد في دليل الربح:' : 'Read more at Profit Guide:'}\n`;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: article.title,
+          text: text,
+          url: shareUrl,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(`${text}${shareUrl}`);
+      alert(lang === 'ar' ? 'تم نسخ الرابط!' : 'Link copied!');
+    }
+  };
+
   const translations = {
     ar: {
       title: 'المقالات',
@@ -33,9 +54,7 @@ export default function Articles() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -51,9 +70,18 @@ export default function Articles() {
               </span>
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3 flex-grow">{article.title}</h3>
-            <Link to={`/post/${article.id}`} className="inline-block mt-4 text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
-              {t.readMore}
-            </Link>
+            <div className="flex justify-between items-center mt-4">
+              <Link to={`/post/${article.id}`} className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+                {t.readMore}
+              </Link>
+              <button 
+                onClick={() => handleShare(article)}
+                className="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 transition-colors"
+                title={lang === 'ar' ? 'مشاركة' : 'Share'}
+              >
+                <Share2 className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         ))}
       </div>

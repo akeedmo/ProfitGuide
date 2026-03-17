@@ -64,6 +64,44 @@ export default function PostDetail() {
   const shareUrl = window.location.href;
   const shareTitle = post.title;
 
+  const handleShare = async (platform: string) => {
+    const text = `${shareTitle}\n${lang === 'ar' ? 'اقرأ المزيد في دليل الربح:' : 'Read more at Profit Guide:'}\n`;
+    const fullUrl = `${text}${shareUrl}`;
+
+    if (platform === 'native') {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: shareTitle,
+            text: text,
+            url: shareUrl,
+          });
+        } catch (err) {
+          console.error('Error sharing:', err);
+        }
+      } else {
+        handleShare('copy');
+      }
+      return;
+    }
+
+    switch (platform) {
+      case 'facebook':
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+        break;
+      case 'twitter':
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`, '_blank');
+        break;
+      case 'linkedin':
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
+        break;
+      case 'copy':
+        navigator.clipboard.writeText(fullUrl);
+        alert(lang === 'ar' ? 'تم نسخ الرابط مع الوصف!' : 'Link copied with description!');
+        break;
+    }
+  };
+
   return (
     <div className="relative">
       {/* Reading Progress Bar */}
@@ -155,13 +193,32 @@ export default function PostDetail() {
                       {lang === 'ar' ? 'شارك المقال:' : lang === 'en' ? 'Share this:' : 'Paylaş:'}
                     </h3>
                     <div className="flex gap-2">
-                      <button className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
+                      <button 
+                        onClick={() => handleShare('native')}
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20 font-bold"
+                      >
+                        <Share2 className="w-5 h-5" />
+                        <span>{lang === 'ar' ? 'مشاركة' : lang === 'en' ? 'Share' : 'Paylaş'}</span>
+                      </button>
+                      <button 
+                        onClick={() => handleShare('facebook')}
+                        className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-emerald-500 hover:text-white transition-all"
+                        title="Facebook"
+                      >
                         <Facebook className="w-5 h-5" />
                       </button>
-                      <button className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
+                      <button 
+                        onClick={() => handleShare('twitter')}
+                        className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-emerald-500 hover:text-white transition-all"
+                        title="Twitter"
+                      >
                         <Twitter className="w-5 h-5" />
                       </button>
-                      <button className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
+                      <button 
+                        onClick={() => handleShare('linkedin')}
+                        className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-emerald-500 hover:text-white transition-all"
+                        title="LinkedIn"
+                      >
                         <Linkedin className="w-5 h-5" />
                       </button>
                     </div>

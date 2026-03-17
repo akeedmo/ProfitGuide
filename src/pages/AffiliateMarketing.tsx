@@ -1,6 +1,7 @@
 import { Link2, Target, TrendingUp, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -80,7 +81,7 @@ const translations = {
     desc: 'Kendi ürününüze sahip olmanıza gerek kalmadan diğer şirketlerin ürün ve hizmetlerini tanıtarak nasıl para kazanacağınızı öğrenin.',
     section1Title: 'Satış Ortaklığı Nedir?',
     section1P1: 'Satış ortaklığı, kendi benzersiz bağlantınız (Affiliate Link) aracılığıyla yapılan her satıştan komisyon karşılığında başka bir şirketin ürün veya hizmetlerini tanıtma sürecidir.',
-    section1P2: 'Nasıl çalışır?',
+    section1P2: 'How does it work?',
     steps: [
       'Beğendiğiniz bir ürün veya hizmet bulursunuz.',
       'Şirketin satış ortaklığı programına katılırsınız.',
@@ -92,7 +93,7 @@ const translations = {
     platforms: [
       { name: 'Amazon Associates', url: 'https://affiliate-program.amazon.com', desc: 'Dünyadaki en ünlü program. Nispeten düşük komisyonlar, ancak insanların Amazon\'a olan güveni nedeniyle dönüşüm oranı çok yüksek.' },
       { name: 'ClickBank', url: 'https://www.clickbank.com', desc: 'Dijital ürünlerde (kurslar, yazılımlar) uzmanlaşmıştır. %75\'e varan çok yüksek komisyonlara sahiptir.' },
-      { name: 'CJ Affiliate', url: 'https://www.cj.com', desc: 'Binlerce küresel markayı barındıran devasa bir ağ. Deneyimli pazarlamacılar için uygundur.' },
+      { name: 'CJ Affiliate', url: 'https://www.cj.com', desc: 'Binlerce küresel markayı barındıran devسا bir ağ. Deneyimli pazarlamacılar için uygundur.' },
       { name: 'Impact', url: 'https://impact.com', desc: 'Ortaklık takibi ve kampanya yönetimi için gelişmiş araçlar sağlayan modern bir platform.' },
       { name: 'Rakuten Advertising', url: 'https://rakutenadvertising.com', desc: 'Çeşitli alanlarda birçok büyük markayı içeren güçlü bir küresel ağ.' },
       { name: 'PartnerStack', url: 'https://partnerstack.com', desc: 'Teknoloji şirketleri ve yazılımlar (SaaS) için ortaklık programlarında uzmanlaşmış bir platform.' },
@@ -104,7 +105,7 @@ const translations = {
       { title: '1. İlgili bir kitle oluşturun (Niş)', desc: 'Her şeyi tanıtmayın. Belirli bir niş seçin (ör. teknoloji, fitness, yemek pişirme) ve bu alanda fikrinize güvenen bir kitle oluşturun.' },
       { title: '2. Değerli içerik oluşturun', desc: 'Takipçiden satın almasını istemeden önce ona fayda sağlayan dürüst ürün incelemeleri, karşılaştırmalar veya eğitimler sunmak için blogları (SEO) veya sosyal medyayı kullanın.' },
     ],
-    exampleTitle: 'Pratik Örnek: Kârlı bir ürün nasıl seçilir',
+    exampleTitle: 'Pratik Öرnek: Kârlı bir ürün nasıl seçilir',
     exampleSteps: [
       { bold: 'Talep:', text: 'İnsanlar bu soruna bir çözüm arıyor mu? Google Trends gibi araçları kullanın.' },
       { bold: 'Kalite:', text: 'Takipçilerinizin güvenini kaybetmemek için ürünün mükemmel olduğundan emin olun.' },
@@ -122,9 +123,7 @@ export default function AffiliateMarketing() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
@@ -135,7 +134,7 @@ export default function AffiliateMarketing() {
             {t.section1Title}
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700 prose prose-lg prose-slate dark:prose-invert max-w-none">
-            <p className="text-gray-700 dark:text-slate-300">{t.section1P1}</p>
+            <FormattedText text={t.section1P1} className="text-gray-700 dark:text-slate-300" />
             <p className="text-gray-900 dark:text-white mt-4">
               <strong>{t.section1P2}</strong>
             </p>
@@ -161,7 +160,7 @@ export default function AffiliateMarketing() {
               >
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{platform.name}</h3>
-                  <p className="text-gray-600 dark:text-slate-300 mb-6">{platform.desc}</p>
+                  <FormattedText text={platform.desc} className="text-gray-600 dark:text-slate-300 mb-6" />
                 </div>
                 <a 
                   href={platform.url}
@@ -188,7 +187,7 @@ export default function AffiliateMarketing() {
               {t.tips.map((tip, index) => (
                 <div key={index}>
                   <h4 className="font-bold text-slate-800 dark:text-emerald-300 mb-2">{tip.title}</h4>
-                  <p className="text-gray-700 dark:text-slate-300">{tip.desc}</p>
+                  <FormattedText text={tip.desc} className="text-gray-700 dark:text-slate-300" />
                 </div>
               ))}
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm mt-6 border border-gray-100 dark:border-slate-700">

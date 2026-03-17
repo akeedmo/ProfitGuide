@@ -1,8 +1,10 @@
 import { Info, Target, Users, Shield } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
+// ... existing translations ...
   ar: {
     title: 'من نحن',
     desc: 'تعرف على رؤيتنا ومهمتنا في مساعدة الشباب العربي على تحقيق الاستقلال المالي من خلال العمل عبر الإنترنت.',
@@ -62,9 +64,7 @@ export default function About() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-12">
@@ -74,7 +74,7 @@ export default function About() {
               <Target className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.missionTitle}</h2>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{t.missionDesc}</p>
+            <FormattedText text={t.missionDesc} className="text-slate-600 dark:text-slate-300" />
           </div>
           
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700">
@@ -82,7 +82,7 @@ export default function About() {
               <Info className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.visionTitle}</h2>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{t.visionDesc}</p>
+            <FormattedText text={t.visionDesc} className="text-slate-600 dark:text-slate-300" />
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function About() {
                   {index === 0 ? <Shield className="w-8 h-8 text-emerald-500" /> : index === 1 ? <Target className="w-8 h-8 text-emerald-500" /> : <Users className="w-8 h-8 text-amber-500" />}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{value.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400">{value.desc}</p>
+                <FormattedText text={value.desc} className="text-slate-600 dark:text-slate-400" />
               </div>
             ))}
           </div>
@@ -105,7 +105,7 @@ export default function About() {
 
         <div className="text-center bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-xl">
           <h2 className="text-3xl font-bold mb-4">{t.contactTitle}</h2>
-          <p className="text-slate-100 dark:text-slate-300 mb-6 max-w-2xl mx-auto">{t.contactDesc}</p>
+          <FormattedText text={t.contactDesc} className="text-slate-100 dark:text-slate-300 mb-6 max-w-2xl mx-auto" />
           <a href="mailto:qydalrfyd@gmail.com" className="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg shadow-emerald-500/30">
             qydalrfyd@gmail.com
           </a>
@@ -114,3 +114,4 @@ export default function About() {
     </div>
   );
 }
+

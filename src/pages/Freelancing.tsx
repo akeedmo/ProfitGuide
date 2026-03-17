@@ -1,11 +1,14 @@
 import { CheckCircle2, Star, TrendingUp, MonitorPlay } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
+// ... existing translations ...
 const translations = {
+// ... existing translations ...
   ar: {
     title: 'العمل الحر (Freelancing)',
-    desc: 'اكتشف كيف يمكنك تحويل مهاراتك إلى مصدر دخل مستدام من خلال العمل الحر عبر الإنترنت.',
+    desc: 'اكتشف كيف يمكنك تحويل مهاراتك إلى مصدر دخل مستدام من خلال العمل حر عبر الإنترنت.',
     section1Title: 'ما هو العمل الحر ولماذا هو مستقبل العمل؟',
     section1P1: 'العمل الحر (Freelancing) هو أن تعمل لحسابك الخاص وتقدم خدماتك لعملاء متعددين بدلاً من الالتزام بوظيفة تقليدية بدوام كامل. أنت مدير نفسك، تحدد ساعات عملك، وتختار المشاريع التي ترغب في العمل عليها.',
     section1P2: 'كيف تبدأ؟',
@@ -110,9 +113,7 @@ export default function Freelancing() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
@@ -123,7 +124,7 @@ export default function Freelancing() {
             {t.section1Title}
           </h2>
           <div className="card p-8 prose prose-lg prose-slate dark:prose-invert max-w-none">
-            <p className="text-gray-700 dark:text-slate-300">{t.section1P1}</p>
+            <FormattedText text={t.section1P1} className="text-gray-700 dark:text-slate-300" />
             <p className="text-gray-900 dark:text-white mt-4">
               <strong>{t.section1P2}</strong>
             </p>
@@ -149,7 +150,7 @@ export default function Freelancing() {
               >
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{platform.name}</h3>
-                  <p className="text-gray-600 dark:text-slate-300 mb-6">{platform.desc}</p>
+                  <FormattedText text={platform.desc} className="text-gray-600 dark:text-slate-300 mb-6" />
                 </div>
                 <a 
                   href={platform.url}
@@ -176,13 +177,13 @@ export default function Freelancing() {
               {t.tips.map((tip, index) => (
                 <div key={index}>
                   <h4 className="font-bold text-slate-800 dark:text-emerald-300 mb-2">{tip.title}</h4>
-                  <p className="text-gray-700 dark:text-slate-300">{tip.desc}</p>
+                  <FormattedText text={tip.desc} className="text-gray-700 dark:text-slate-300" />
                 </div>
               ))}
               <div className="card p-6 mt-6 border-l-4 border-emerald-500 dark:border-slate-700" style={{ borderLeftColor: dir === 'rtl' ? 'transparent' : '#10B981', borderRightColor: dir === 'rtl' ? '#10B981' : 'transparent', borderRightWidth: dir === 'rtl' ? '4px' : '0' }}>
                 <h4 className="font-bold text-slate-900 dark:text-emerald-400 mb-3">{t.exampleTitle}</h4>
                 <p className="text-gray-600 dark:text-slate-300 mb-4 italic">"{t.exampleText}"</p>
-                <p className="text-sm text-gray-500 dark:text-slate-400">{t.exampleNote}</p>
+                <FormattedText text={t.exampleNote} className="text-sm text-gray-500 dark:text-slate-400" />
               </div>
             </div>
           </div>
@@ -191,3 +192,4 @@ export default function Freelancing() {
     </div>
   );
 }
+

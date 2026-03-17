@@ -1,6 +1,7 @@
 import { LineChart, Bitcoin, TrendingUp, AlertTriangle, ShieldAlert } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -98,9 +99,7 @@ export default function DigitalInvestments() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       {/* Warning Banner */}
@@ -108,7 +107,7 @@ export default function DigitalInvestments() {
         <AlertTriangle className="text-red-500 h-8 w-8 shrink-0" />
         <div>
           <h3 className="text-red-800 dark:text-red-400 font-bold text-lg mb-2">{t.warningTitle}</h3>
-          <p className="text-red-700 dark:text-red-300">{t.warningDesc}</p>
+          <FormattedText text={t.warningDesc} className="text-red-700 dark:text-red-300" />
         </div>
       </div>
 
@@ -120,12 +119,12 @@ export default function DigitalInvestments() {
             {t.section1Title}
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700">
-            <p className="text-lg text-gray-700 dark:text-slate-300 mb-6">{t.section1P1}</p>
+            <FormattedText text={t.section1P1} className="text-lg text-gray-700 dark:text-slate-300 mb-6" />
             <div className="space-y-4">
               {t.cryptoTypes.map((crypto, index) => (
                 <div key={index} className="bg-gray-50 dark:bg-slate-900/50 p-4 rounded-xl border border-gray-100 dark:border-slate-700">
                   <h3 className="font-bold text-slate-900 dark:text-emerald-400 mb-1">{crypto.name}</h3>
-                  <p className="text-gray-600 dark:text-slate-300 text-sm">{crypto.desc}</p>
+                  <FormattedText text={crypto.desc} className="text-gray-600 dark:text-slate-300 text-sm" />
                 </div>
               ))}
             </div>
@@ -139,12 +138,12 @@ export default function DigitalInvestments() {
             {t.section2Title}
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700">
-            <p className="text-lg text-gray-700 dark:text-slate-300 mb-6">{t.section2P1}</p>
+            <FormattedText text={t.section2P1} className="text-lg text-gray-700 dark:text-slate-300 mb-6" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {t.stockTypes.map((stock, index) => (
                 <div key={index} className="border border-gray-200 dark:border-slate-700 rounded-xl p-6 hover:border-emerald-300 dark:hover:border-emerald-500/50 transition-colors">
                   <h3 className="font-bold text-slate-900 dark:text-emerald-400 text-xl mb-3">{stock.title}</h3>
-                  <p className="text-gray-600 dark:text-slate-300">{stock.desc}</p>
+                  <FormattedText text={stock.desc} className="text-gray-600 dark:text-slate-300" />
                 </div>
               ))}
             </div>
@@ -158,10 +157,10 @@ export default function DigitalInvestments() {
             {t.section3Title}
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700 prose prose-lg prose-slate dark:prose-invert max-w-none">
-            <p className="text-gray-700 dark:text-slate-300">{t.section3P1}</p>
-            <p className="text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg text-sm font-medium mt-4">
-              {t.section3P2}
-            </p>
+            <FormattedText text={t.section3P1} className="text-gray-700 dark:text-slate-300" />
+            <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg mt-4">
+              <FormattedText text={t.section3P2} className="text-amber-600 dark:text-amber-400 text-sm font-medium" />
+            </div>
           </div>
         </section>
 
@@ -175,7 +174,7 @@ export default function DigitalInvestments() {
             {t.platforms.map((platform, index) => (
               <div key={index} className="bg-slate-800/50 dark:bg-slate-700/50 p-6 rounded-xl border border-emerald-700 dark:border-slate-600">
                 <h3 className="font-bold text-xl mb-2">{platform.name}</h3>
-                <p className="text-slate-200 dark:text-slate-300 text-sm">{platform.desc}</p>
+                <FormattedText text={platform.desc} className="text-slate-200 dark:text-slate-300 text-sm" />
               </div>
             ))}
           </div>

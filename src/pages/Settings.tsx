@@ -206,9 +206,7 @@ export default function Settings() {
               {lang === 'ar' ? 'العودة للموقع' : lang === 'en' ? 'Back to Site' : 'Siteye Dön'}
             </Link>
           </div>
-          <p className="text-center text-sm text-slate-500 mt-6">
-            (Hint: password is "admin123")
-          </p>
+
         </div>
       </div>
     );

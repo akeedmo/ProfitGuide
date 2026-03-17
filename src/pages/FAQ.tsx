@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, HelpCircle, Share2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -227,17 +228,45 @@ export default function FAQ() {
   const { lang, dir } = useLanguage();
   const t = translations[lang];
 
+  const handleShare = async () => {
+    const shareUrl = window.location.href;
+    const shareTitle = t.title;
+    const text = `${shareTitle}\n${lang === 'ar' ? 'إليك إجابات لأهم الأسئلة حول الربح من الإنترنت:' : 'Here are answers to the most important questions about online profit:'}\n`;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: text,
+          url: shareUrl,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(`${text}${shareUrl}`);
+      alert(lang === 'ar' ? 'تم نسخ الرابط!' : 'Link copied!');
+    }
+  };
+
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
-      <div className="mb-12 text-center">
+      <div className="mb-12 text-center relative">
+        <div className="absolute top-0 right-0">
+          <button 
+            onClick={handleShare}
+            className="p-3 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20"
+            title={lang === 'ar' ? 'مشاركة' : 'Share'}
+          >
+            <Share2 className="w-5 h-5" />
+          </button>
+        </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6 flex items-center justify-center gap-3">
           <HelpCircle className="text-emerald-500 h-10 w-10" />
           {t.title}
         </h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300" />
       </div>
 
       <div className="space-y-4">
@@ -265,9 +294,9 @@ export default function FAQ() {
                 openIndex === index ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <p className="text-gray-600 dark:text-slate-300 leading-relaxed border-t border-gray-100 dark:border-slate-700 pt-4">
-                {faq.a}
-              </p>
+              <div className="border-t border-gray-100 dark:border-slate-700 pt-4">
+                <FormattedText text={faq.a} className="text-gray-600 dark:text-slate-300" />
+              </div>
             </div>
           </div>
         ))}
@@ -275,7 +304,7 @@ export default function FAQ() {
 
       <div className="mt-12 bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 text-center border border-slate-100 dark:border-slate-700">
         <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-2">{t.moreQuestions}</h3>
-        <p className="text-gray-600 dark:text-slate-300 mb-6">{t.contactUs}</p>
+        <FormattedText text={t.contactUs} className="text-gray-600 dark:text-slate-300 mb-6" />
         <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition-colors">
           {lang === 'ar' ? 'اتصل بنا' : lang === 'tr' ? 'Bize Ulaşın' : 'Contact Us'}
         </button>

@@ -1,6 +1,7 @@
-import { Lightbulb, AlertCircle, Target, CheckCircle2 } from 'lucide-react';
+import { Lightbulb, AlertCircle, Target, CheckCircle2, Share2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -75,14 +76,42 @@ export default function TipsGuides() {
   const { lang } = useLanguage();
   const t = translations[lang];
 
+  const handleShare = async () => {
+    const shareUrl = window.location.href;
+    const shareTitle = t.title;
+    const text = `${shareTitle}\n${lang === 'ar' ? 'اكتشف أفضل النصائح للربح من الإنترنت:' : 'Discover the best tips for online profit:'}\n`;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: text,
+          url: shareUrl,
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(`${text}${shareUrl}`);
+      alert(lang === 'ar' ? 'تم نسخ الرابط!' : 'Link copied!');
+    }
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SEO title={t.title} description={t.desc} />
-      <div className="mb-12 text-center">
+      <div className="mb-12 text-center relative">
+        <div className="absolute top-0 right-0">
+          <button 
+            onClick={handleShare}
+            className="p-3 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20"
+            title={lang === 'ar' ? 'مشاركة' : 'Share'}
+          >
+            <Share2 className="w-5 h-5" />
+          </button>
+        </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
@@ -99,7 +128,7 @@ export default function TipsGuides() {
                   <span className="text-emerald-600 dark:text-emerald-400 font-bold text-xl">{index + 1}</span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-3">{tip.title}</h3>
-                <p className="text-gray-600 dark:text-slate-300">{tip.desc}</p>
+                <FormattedText text={tip.desc} className="text-gray-600 dark:text-slate-300" />
               </div>
             ))}
           </div>
@@ -116,7 +145,7 @@ export default function TipsGuides() {
               {t.section2Mistakes.map((mistake, index) => (
                 <div key={index} className="card p-5 border-red-50 dark:border-red-900/50">
                   <h3 className="font-bold text-red-800 dark:text-red-400 mb-2">{mistake.title}</h3>
-                  <p className="text-gray-700 dark:text-slate-300 text-sm">{mistake.desc}</p>
+                  <FormattedText text={mistake.desc} className="text-gray-700 dark:text-slate-300 text-sm" />
                 </div>
               ))}
             </div>
@@ -135,7 +164,7 @@ export default function TipsGuides() {
                 <CheckCircle2 className="text-emerald-500 shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-2">{story.title}</h3>
-                  <p className="text-gray-600 dark:text-slate-300">{story.desc}</p>
+                  <FormattedText text={story.desc} className="text-gray-600 dark:text-slate-300" />
                 </div>
               </div>
             ))}

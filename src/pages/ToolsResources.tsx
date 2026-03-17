@@ -1,6 +1,7 @@
 import { PenTool, Laptop, BookOpen, Briefcase, Layout, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -101,9 +102,7 @@ export default function ToolsResources() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-16 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
@@ -128,7 +127,9 @@ export default function ToolsResources() {
                     <ExternalLink className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400" />
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-slate-300 text-base leading-relaxed flex-grow mb-6">{tool.desc}</p>
+                <div className="flex-grow mb-6">
+                  <FormattedText text={tool.desc} className="text-gray-600 dark:text-slate-300 text-base" />
+                </div>
                 <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-sm flex items-center gap-2 mt-auto">
                   {t.visitSite}
                 </span>
@@ -158,7 +159,9 @@ export default function ToolsResources() {
                     <ExternalLink className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400" />
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-slate-300 text-base leading-relaxed flex-grow mb-6">{tool.desc}</p>
+                <div className="flex-grow mb-6">
+                  <FormattedText text={tool.desc} className="text-gray-600 dark:text-slate-300 text-base" />
+                </div>
                 <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-sm flex items-center gap-2 mt-auto">
                   {t.visitSite}
                 </span>
@@ -188,7 +191,9 @@ export default function ToolsResources() {
                     <ExternalLink className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400" />
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-slate-300 text-base leading-relaxed flex-grow mb-6">{tool.desc}</p>
+                <div className="flex-grow mb-6">
+                  <FormattedText text={tool.desc} className="text-gray-600 dark:text-slate-300 text-base" />
+                </div>
                 <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-sm flex items-center gap-2 mt-auto">
                   {t.visitSite}
                 </span>

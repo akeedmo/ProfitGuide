@@ -119,8 +119,8 @@ export default function Navbar() {
                     to={link.path}
                     className={`px-3 py-2 rounded-lg text-sm font-bold transition-all border ${
                       isActive
-                        ? 'bg-emerald-500 text-white border-emerald-500 shadow-lg shadow-emerald-500/20'
-                        : 'text-slate-300 border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800 hover:text-emerald-400'
+                        ? 'bg-slate-950 text-emerald-400 border-emerald-500/50 shadow-lg shadow-black/20'
+                        : 'text-slate-300 border-slate-800 hover:border-emerald-500/30 hover:bg-slate-950 hover:text-emerald-400'
                     }`}
                   >
                     {link.name}
@@ -246,7 +246,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center p-3 rounded-xl border transition-all gap-3 group ${
                     isActive
-                      ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800/50 text-emerald-700 dark:text-emerald-400 shadow-sm'
+                      ? 'bg-slate-950 border-emerald-500/30 text-emerald-400 shadow-sm'
                       : 'bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-200 dark:hover:border-slate-600 hover:text-emerald-700 dark:hover:text-emerald-400 hover:shadow-sm'
                   }`}
                 >

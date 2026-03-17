@@ -1,6 +1,7 @@
 import { Youtube, Instagram, Mic, Users, PlayCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -119,9 +120,7 @@ export default function ContentCreation() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
@@ -132,9 +131,7 @@ export default function ContentCreation() {
             {t.section1Title}
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700">
-            <p className="text-lg text-gray-600 dark:text-slate-300 mb-6">
-              {t.section1P1}
-            </p>
+            <FormattedText text={t.section1P1} className="text-lg text-gray-600 dark:text-slate-300 mb-6" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 dark:bg-slate-900/50 rounded-xl p-6 border border-gray-100 dark:border-slate-700">
                 <h3 className="font-bold text-slate-900 dark:text-emerald-400 mb-3 flex items-center gap-2">
@@ -167,17 +164,15 @@ export default function ContentCreation() {
             {t.section2Title}
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700 prose prose-lg prose-slate dark:prose-invert max-w-none">
-            <p className="text-gray-700 dark:text-slate-300">
-              {t.section2P1}
-            </p>
+            <FormattedText text={t.section2P1} className="text-gray-700 dark:text-slate-300" />
             <div className="space-y-4 mt-6">
               <div className="border-emerald-500 px-4" style={{ borderRightWidth: dir === 'rtl' ? '4px' : '0', borderLeftWidth: dir === 'ltr' ? '4px' : '0' }}>
                 <h4 className="font-bold text-slate-900 dark:text-emerald-400">{t.sponsorshipsTitle}</h4>
-                <p className="text-gray-600 dark:text-slate-300 text-base">{t.sponsorshipsDesc}</p>
+                <FormattedText text={t.sponsorshipsDesc} className="text-gray-600 dark:text-slate-300 text-base" />
               </div>
               <div className="border-emerald-500 px-4" style={{ borderRightWidth: dir === 'rtl' ? '4px' : '0', borderLeftWidth: dir === 'ltr' ? '4px' : '0' }}>
                 <h4 className="font-bold text-slate-900 dark:text-emerald-400">{t.giftsTitle}</h4>
-                <p className="text-gray-600 dark:text-slate-300 text-base">{t.giftsDesc}</p>
+                <FormattedText text={t.giftsDesc} className="text-gray-600 dark:text-slate-300 text-base" />
               </div>
             </div>
           </div>
@@ -190,9 +185,7 @@ export default function ContentCreation() {
             {t.section3Title}
           </h2>
           <div className="bg-gray-50 dark:bg-slate-900/50 border border-gray-100 dark:border-slate-700 rounded-2xl p-8">
-            <p className="text-gray-700 dark:text-slate-300 text-lg mb-6">
-              {t.section3P1}
-            </p>
+            <FormattedText text={t.section3P1} className="text-gray-700 dark:text-slate-300 text-lg mb-6" />
             <h3 className="text-2xl font-bold text-slate-900 dark:text-emerald-400 mb-4 flex items-center gap-2">
               <Users className="h-6 w-6 text-emerald-500" /> {t.tipsTitle}
             </h3>
@@ -200,7 +193,7 @@ export default function ContentCreation() {
               {t.tips.map((tip, index) => (
                 <div key={index} className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700">
                   <h4 className="font-bold text-slate-900 dark:text-emerald-400 mb-2">{tip.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-slate-300">{tip.desc}</p>
+                  <FormattedText text={tip.desc} className="text-sm text-gray-600 dark:text-slate-300" />
                 </div>
               ))}
             </div>

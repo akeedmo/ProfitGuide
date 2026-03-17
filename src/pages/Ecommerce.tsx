@@ -2,6 +2,7 @@ import { ShoppingBag, Store, Package, CreditCard, CheckCircle2, ChevronDown, Che
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
+import FormattedText from '../components/FormattedText';
 
 const translations = {
   ar: {
@@ -149,9 +150,7 @@ export default function Ecommerce() {
       <SEO title={t.title} description={t.desc} />
       <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-emerald-400 mb-6">{t.title}</h1>
-        <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-          {t.desc}
-        </p>
+        <FormattedText text={t.desc} className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto" />
       </div>
 
       <div className="space-y-16">
@@ -178,7 +177,7 @@ export default function Ecommerce() {
                 </button>
                 {openProductIndex === index && (
                   <div className="p-6 pt-0 border-t border-gray-50 dark:border-slate-700">
-                    <p className="text-gray-600 dark:text-slate-300 text-lg leading-relaxed">{product.desc}</p>
+                    <FormattedText text={product.desc} className="text-gray-600 dark:text-slate-300 text-lg" />
                   </div>
                 )}
               </div>
@@ -197,7 +196,9 @@ export default function Ecommerce() {
               {t.platforms.map((platform, index) => (
                 <div key={index} className="flex flex-col h-full">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-emerald-400 mb-2">{platform.name}</h3>
-                  <p className="text-gray-600 dark:text-slate-300 mb-4 flex-grow">{platform.desc}</p>
+                  <div className="flex-grow">
+                    <FormattedText text={platform.desc} className="text-gray-600 dark:text-slate-300 mb-4" />
+                  </div>
                   <a 
                     href={platform.url} 
                     target="_blank" 
@@ -224,7 +225,7 @@ export default function Ecommerce() {
               {t.tips.map((tip, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="text-emerald-500 mt-1 shrink-0 h-6 w-6" />
-                  <span className="text-gray-700 dark:text-slate-300 text-lg">{tip}</span>
+                  <FormattedText text={tip} className="text-gray-700 dark:text-slate-300 text-lg" />
                 </li>
               ))}
             </ul>
