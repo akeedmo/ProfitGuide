@@ -420,7 +420,12 @@ export default function Home() {
             className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-[2.5rem] shadow-2xl"
           >
             <Link to={t.methods[0].path} className="absolute inset-0 z-20"></Link>
-            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=60" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Freelancing" />
+            <img 
+              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=60" 
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              alt="Freelancing" 
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
             <div className="absolute bottom-0 left-0 right-0 p-10 z-20">
               <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl">
@@ -564,6 +569,7 @@ export default function Home() {
                     alt={article.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                   <div className="absolute top-6 left-6 flex gap-2">

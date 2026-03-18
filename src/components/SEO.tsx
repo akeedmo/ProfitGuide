@@ -26,6 +26,24 @@ export default function SEO({ title, description, keywords }: SEOProps) {
       <meta name="keywords" content={keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description || defaultDescription} />
+      <meta property="og:url" content={window.location.href} />
+      <meta property="og:image" content="https://profit-guide.vercel.app/og-image.jpg" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={siteTitle} />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": siteTitle,
+          "url": "https://profit-guide.vercel.app/",
+          "description": description || defaultDescription,
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://profit-guide.vercel.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <html lang={lang} />
     </Helmet>
