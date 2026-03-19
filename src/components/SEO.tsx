@@ -30,6 +30,7 @@ export default function SEO({ title, description, keywords }: SEOProps) {
       <meta property="og:image" content="https://profit-guide.vercel.app/og-image.jpg" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={siteTitle} />
+      <meta name="google-site-verification" content="giuVa7OJ08egGzNqwU0o93jW9UowStR9py3PCL0ArDg" />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
